@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:notely/app/constants/color.dart';
+import 'package:notely/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -28,12 +30,17 @@ class HomeView extends GetView<HomeController> {
             ),
             Container(
               height: 31,
-              decoration: BoxDecoration(color: Color(0xffD9D9D9)),
+              decoration: BoxDecoration(
+                  color: appPurpleGrey,
+                  borderRadius: BorderRadius.circular(15)),
               child: TextField(),
             ),
             SizedBox(
               height: 17,
             ),
+            FloatingActionButton.small(onPressed: () {
+              Get.toNamed(Routes.NOTELIST);
+            }),
           ],
         ),
       ),
